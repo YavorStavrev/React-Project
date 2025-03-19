@@ -10,6 +10,7 @@ import Register from './components/register/Register'
 import { useState } from 'react'
 import Details from './components/details/Details'
 import EditPost from './components/edit-post/EditPost'
+import Error from './components/error/Error'
 
 function App() {
   const [email, setEmail] = useState('');
@@ -31,6 +32,7 @@ function App() {
           <Route path='properties/:propertyId/edit' element={<EditPost />} />
           <Route path='/login' element={<Login onLogin={userLoginHandler}/>} />
           <Route path='/register' element={<Register />} />
+          <Route path='*' element={<Error />}/>
         </Routes>
     </main>
       

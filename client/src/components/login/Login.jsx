@@ -18,7 +18,6 @@ export default function Login({
         <section id="login-page" className="auth">
             <form id="login" action={loginAction}>
                 <div className="container">
-                    <div className="brand-logo"></div>
                     <h1>Login</h1>
                     <label htmlFor="email">Email:</label>
                     <input type="email" id="email" name="email" placeholder="Enter email..." />

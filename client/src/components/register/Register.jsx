@@ -3,7 +3,7 @@ export default function Register() {
         <section id="register-page" className="content auth">
             <form id="register">
                 <div className="container">
-                    <div className="brand-logo"></div>
+                   
                     <h1>Register</h1>
 
                     <label htmlFor="email">Email:</label>

@@ -1,0 +1,148 @@
+/* Property Details Page */
+#property-details {
+    background: url('/images/wooden.jpg') no-repeat center center/cover;
+    background-color: #f4f4f4;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+#property-details h1 {
+    color: #2A265F;
+    font-family: "Agency FB", sans-serif;
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+/* Property Info Section */
+.info-section {
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+    max-width: 800px;
+    width: 100%;
+    padding: 30px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Property Header */
+.property-header {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.property-img {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 15px;
+}
+
+.property-header h1 {
+    color: #2A265F;
+    font-size: 32px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.neighborhood {
+    font-size: 20px;
+    font-weight: 600;
+    color: #8B4513; /* Wooden shade */
+    margin-bottom: 10px;
+}
+
+.type {
+    font-size: 20px;
+    font-weight: 600;
+    color: #333;
+    background-color: #F8F1E4; /* Light wooden shade */
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+/* Property Details */
+.text {
+    font-size: 20px;
+    color: #333;
+    font-weight: 500;
+    margin: 10px 0;
+}
+
+/* Buttons Section */
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.button {
+    background-color: #A0522D; /* Wooden shade */
+    color: white;
+    padding: 12px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #8B4513; /* Darker wooden shade */
+    transform: scale(1.05);
+}
+
+.button:active {
+    transform: scale(1);
+}
+
+/* Property Details */
+.property-header {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Back Button - Positioned Next to Image */
+.back-button {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: #A0522D; /* Wooden shade */
+    color: white;
+    padding: 13px 16px;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.back-button:hover {
+    background-color: #8B4513; /* Darker wooden shade */
+    transform: scale(1.05);
+}
+
+.back-button:active {
+    transform: scale(1);
+}

@@ -17,7 +17,7 @@ export default function EditPost() {
 
         await propertyService.edit(propertyId, propertyData);
 
-        navigate(`/catalog/${propertyId}/details`);
+        navigate(`/properties/${propertyId}/details`);
     }
 
     return (
@@ -25,7 +25,7 @@ export default function EditPost() {
             <form id="edit" action={formAction}>
                 <div className="container">
 
-                    <h1>Create Property</h1>
+                    <h1>Edit Property</h1>
                     <label htmlFor="sales">Sales or Rentals:</label>
                     <input type="text" id="sales" name="sales" defaultValue={property.sales} placeholder="Enter Sales or Rentals..." />
 
@@ -47,7 +47,7 @@ export default function EditPost() {
                     <label htmlFor="area">Property area:</label>
                     <input type="text" id="area" name="area" defaultValue={property.area} placeholder="Enter area..." />
 
-                    <input className="btn submit" type="submit" defaultValue="Create Property" />
+                    <input className="btn submit" type="submit" defaultValue="Edit Property" />
                 </div>
             </form>
         </section>
