@@ -6,7 +6,7 @@ export default function Header() {
                     <img className="logo" src="/images/logo.png" alt="Logo" />
                     <a href="#">Home</a>
                     <a href="#">Catalog</a>
-                    <a href="#">Create</a>
+                    <a href="/properties/create">Create</a>
                 </div>
                 <div className="nav-right">
                     <a href="#">Logout</a>

@@ -1,0 +1,100 @@
+/* General container for form */
+#create-page {
+    background: url('/images/wooden.jpg') no-repeat center center/cover;
+    background-color: #f4f4f4;
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    box-sizing: border-box;
+}
+
+.container {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+    border: 1px solid #e0e0e0;
+}
+
+/* Header Style */
+.container h1 {
+    text-align: center;
+    font-size: 36px;
+    color: #333;
+    margin-bottom: 30px;
+    font-family: Arial, sans-serif;
+}
+
+/* Label styles */
+label {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 8px;
+    display: block;
+    color: #333;
+}
+
+/* Input fields */
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #f9f9f9;
+    transition: border-color 0.3s ease;
+}
+
+/* Hover effect for input fields */
+input[type="text"]:hover {
+    border-color: #A0522D; /* Wooden shade */
+}
+
+/* Focus effect for input fields */
+input[type="text"]:focus {
+    border-color: #8B4513; /* Darker wooden shade */
+    outline: none;
+}
+
+/* Submit button (Create Property) */
+input[type="submit"] {
+    background-color: #A0522D; /* Wooden shade */
+    color: white;
+    padding: 12px 24px;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%; /* Ensure full width like the inputs */
+}
+
+input[type="submit"]:hover {
+    background-color: #8B4513; /* Darker wooden shade */
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+        width: 90%;
+    }
+
+    .container h1 {
+        font-size: 28px;
+    }
+
+    input[type="submit"] {
+        font-size: 16px;
+        padding: 10px 20px;
+    }
+}
+
+
+

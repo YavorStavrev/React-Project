@@ -12,14 +12,14 @@
 
 .home h1 {
     font-size: 48px;
-    color: black;
+    color: white;
     margin: 0;
 }
 
 .home p {
     font-size: 20px;
     margin: 10px 0 20px;
-    color: black;
+    color: white;
 }
 
 .btn {
