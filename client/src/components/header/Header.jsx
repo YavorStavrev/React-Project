@@ -1,17 +1,19 @@
+import { Link } from "react-router";
+
 export default function Header() {
     return (
         <header>
             <nav className="navigation">
                 <div className="nav-left">
                     <img className="logo" src="/images/logo.png" alt="Logo" />
-                    <a href="#">Home</a>
-                    <a href="#">Catalog</a>
-                    <a href="/properties/create">Create</a>
+                    <Link to="/">Home</Link>
+                    <Link to="/catalog">Catalog</Link>
+                    <Link to="/properties/create">Create</Link>
                 </div>
                 <div className="nav-right">
-                    <a href="#">Logout</a>
-                    <a href="#">Login</a>
-                    <a href="#">Register</a>
+                    <Link to="/logout">Logout</Link>
+                    <Link to="/login">Login</Link>
+                    <Link to="/register">Register</Link>
                 </div>
             </nav>
         </header>
