@@ -1,0 +1,77 @@
+/* 404 Error Page Styling */
+#error-page {
+    background: url('/images/wooden.jpg') no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    
+    /* Full-page layout */
+    min-height: calc(100vh - var(--header-height) - var(--footer-height));
+    width: 100%;
+    
+    font-family: "Agency FB", sans-serif;
+    background: #f4f4f4;
+}
+
+/* Set custom properties for header/footer height */
+:root {
+    --header-height: 80px; /* Adjust based on your actual header height */
+    --footer-height: 80px; /* Adjust based on your actual footer height */
+}
+
+/* Error Box */
+#error-box {
+    background: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.2);
+    max-width: 600px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#error-box h1 {
+    font-size: 120px;
+    font-weight: bold;
+    color: #A0522D; /* Wooden shade */
+    margin: 0;
+}
+
+#error-box h2 {
+    font-size: 28px;
+    color: #2A265F;
+    margin-top: 10px;
+    text-transform: uppercase;
+}
+
+#error-box p {
+    font-size: 20px;
+    color: #555;
+    margin: 20px 0;
+}
+
+/* Back Button */
+.back-button-home {
+    display: inline-block;
+    background-color: #A0522D;
+    color: white;
+    text-decoration: none;
+    padding: 14px 24px;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+   
+    align-self: center;
+}
+
+/* Hover effect for the button */
+.back-button-home:hover {
+    background-color: #8B4513;
+    transform: scale(1.05);
+} 
