@@ -7,8 +7,17 @@ import CreatePost from './components/create-post/CreatePost'
 import Login from './components/login/Login'
 import Catalog from './components/catalog/Catalog'
 import Register from './components/register/Register'
+import { useState } from 'react'
+import Details from './components/details/Details'
+import EditPost from './components/edit-post/EditPost'
 
 function App() {
+  const [email, setEmail] = useState('');
+
+  const userLoginHandler = (email) => {
+    setEmail(email);
+  };
+
   return (
     <>
       <Header />
@@ -16,9 +25,11 @@ function App() {
     <main id='main'>
         <Routes>
           <Route path='/' element={<Home />} />
-          <Route path='/properties' element={<Catalog />} />
+          <Route path='/catalog' element={<Catalog />} />
           <Route path='/properties/create' element={<CreatePost />} />
-          <Route path='/login' element={<Login />} />
+          <Route path='/properties/:propertyId/details' element={<Details />} />
+          <Route path='properties/:propertyId/edit' element={<EditPost />} />
+          <Route path='/login' element={<Login onLogin={userLoginHandler}/>} />
           <Route path='/register' element={<Register />} />
         </Routes>
     </main>

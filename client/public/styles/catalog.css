@@ -1,0 +1,120 @@
+/* Catalog Page */
+#catalog-page {
+    background: url('/images/wooden.jpg') no-repeat center center/cover;
+    background-color: #f4f4f4;
+    padding: 40px;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+#catalog-page > h1 {
+    color: #2A265F;
+    font-family: "Agency FB", sans-serif;
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.no-articles {
+    font-size: 24px;
+    color: #888;
+    text-align: center;
+    margin-top: 50px;
+}
+
+/* Catalog Item */
+.allProperties {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
+    margin: 15px auto;
+    padding: 20px;
+    max-width: 700px;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column; /* Поставя снимката отгоре и таблицата под нея */
+    align-items: center;
+    justify-content: center;
+}
+
+.allProperties-info {
+    width: 100%;
+    display: flex;
+    flex-direction: column; /* Поставя снимката отгоре и таблицата под нея */
+    align-items: center;
+    justify-content: center;
+}
+
+.image {
+    width: 100%;
+    max-width: 100%; /* За да не надвишава контейнера */
+    padding-bottom: 20px;
+}
+
+.image img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+.table {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    width: 100%;
+    max-width: 600px; /* Ограничаваме ширината на таблицата */
+    padding: 10px;
+}
+
+.table table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table td {
+    padding: 10px;
+    vertical-align: top;
+}
+
+.table h3 {
+    color: #2a265f; /* Dark wooden shade for headers */
+    font-size: 22px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.table td h3 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #333;
+    text-transform: capitalize;
+}
+
+.details-button {
+    background-color: #A0522D; /* Wooden shade */
+    color: white;
+    padding: 12px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 15px;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+.details-button:hover {
+    background-color: #8B4513; /* Darker wooden shade */
+}
+
+.catalog-item-link:hover .allProperties {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}

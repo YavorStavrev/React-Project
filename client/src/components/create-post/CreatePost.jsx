@@ -5,13 +5,13 @@ export default function CreatePost() {
     const navigate = useNavigate();
 
     const submitAction = async (formData) => {
-        console.log(formData);
         const propertyData = Object.fromEntries(formData);
+        console.log(propertyData);
 
         await propertyService.create(propertyData);
         
         
-        navigate('/');
+        navigate('/catalog');
     }
     return (
         <section id="create-page" className="auth">
