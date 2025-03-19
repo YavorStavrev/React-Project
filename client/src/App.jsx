@@ -28,7 +28,7 @@ function App() {
           <Route path='/' element={<Home />} />
           <Route path='/catalog' element={<Catalog />} />
           <Route path='/properties/create' element={<CreatePost />} />
-          <Route path='/properties/:propertyId/details' element={<Details />} />
+          <Route path='/properties/:propertyId/details' element={<Details email={email}/>} />
           <Route path='properties/:propertyId/edit' element={<EditPost />} />
           <Route path='/login' element={<Login onLogin={userLoginHandler}/>} />
           <Route path='/register' element={<Register />} />

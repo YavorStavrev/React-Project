@@ -1,22 +1,24 @@
 import { useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router";
 import propertyService from "../../services/propertyService";
-// import CommentsShow from "../comments-show/CommentsShow";
-// import CommentsCreate from "../comments-create/CommentsCreate";
-// import commentService from "../../services/commentService";
+import CommentsShow from "../comments-show/CommentsShow";
+import CommentsCreate from "../comments-create/CommentsCreate";
+import commentService from "../../services/commentService";
 
-export default function Details() {
+export default function Details({
+    email,
+}) {
     const navigate = useNavigate();
     const [property, setProperty] = useState({});
-    // const [comments, setComments] = useState([]);
+    const [comments, setComments] = useState([]);
     const { propertyId } = useParams();
 
     useEffect(() => {
         propertyService.getOne(propertyId)
             .then(setProperty);
 
-        // commentService.getAll(gameId)
-        //     .then(setComments)
+        commentService.getAll(propertyId)
+            .then(setComments)
     }, [propertyId]);
 
     const propertyDeleteClickHandler = async () => {
@@ -31,9 +33,9 @@ export default function Details() {
         navigate('/catalog');
     };
 
-    // const commentCreateHandler = (newComment) => {
-    //     setComments(state => [...state, newComment]);
-    // };
+    const commentCreateHandler = (newComment) => {
+        setComments(state => [...state, newComment]);
+    };
 
     return (
         <section id="property-details">
@@ -56,9 +58,9 @@ export default function Details() {
                 <p className="text">{`Price: ${property.price}`}</p>
                 <p className="text">{`Area: ${property.area}`}</p>
 
-                {/* <CommentsShow comments={comments} /> */}
+                <CommentsShow comments={comments} />
 
-                {/* <!-- Edit/Delete buttons ( Only for creator of this game )  --> */}
+                
                 <div className="buttons">
                     <Link to={`/properties/${propertyId}/edit`} className="button">Edit</Link>
                     <button
@@ -70,11 +72,11 @@ export default function Details() {
                 </div>
             </div>
 
-            {/* <CommentsCreate
+            <CommentsCreate
                 email={email}
-                gameId={gameId}
+                propertyId={propertyId}
                 onCreate={commentCreateHandler}
-            /> */}
+            />
         </section>
     );
 }

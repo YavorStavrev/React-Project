@@ -16,12 +16,14 @@
 
 /* Set custom properties for header/footer height */
 :root {
+    
     --header-height: 80px; /* Adjust based on your actual header height */
     --footer-height: 80px; /* Adjust based on your actual footer height */
 }
 
 /* Error Box */
 #error-box {
+    
     background: white;
     padding: 40px;
     border-radius: 10px;
