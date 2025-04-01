@@ -1,15 +1,8 @@
-import { useEffect, useState } from "react";
-import propertyService from "../../services/propertyService";
 import CatalogItem from "./catalog-item/CatalogItem";
-import { Link } from "react-router";
+import { useProperties } from "../../api/propertyApi";
 
 export default function Catalog() {
-    const [properties, setProperties] = useState([]);
-
-    useEffect(() => {
-        propertyService.getAll()
-            .then(setProperties)
-    }, []);
+    const  { properties } = useProperties();
     return (
         <section id="catalog-page">
             <h1>All Properties</h1>
