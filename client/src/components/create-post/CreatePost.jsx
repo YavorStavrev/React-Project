@@ -1,15 +1,14 @@
 import { useNavigate } from "react-router";
-import propertyService from "../../services/propertyService";
+import { useCreateProperty } from '../../api/propertyApi';
 
 export default function CreatePost() {
     const navigate = useNavigate();
+    const { create: createProperty } = useCreateProperty();
 
     const submitAction = async (formData) => {
         const propertyData = Object.fromEntries(formData);
-        console.log(propertyData);
 
-        await propertyService.create(propertyData);
-        
+        await createProperty(propertyData);
         
         navigate('/catalog');
     }
