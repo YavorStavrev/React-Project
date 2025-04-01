@@ -1,25 +1,21 @@
-import { useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router";
-import propertyService from "../../services/propertyService";
+import { Navigate, useNavigate, useParams } from "react-router";
+import { useEditProperty, useProperty } from "../../api/propertyApi";
+import useAuth from "../../hooks/useAuth";
 
 export default function EditPost() {
     const navigate = useNavigate();
+    const { userId } = useAuth();
     const { propertyId } = useParams();
-    const [property, setProperty] = useState({});
-
-    useEffect(() => {
-        propertyService.getOne(propertyId)
-            .then(setProperty);
-    }, [propertyId]);
+    const { property } = useProperty(propertyId)
+    const { edit } = useEditProperty();
 
     const formAction = async (formData) => {
         const propertyData = Object.fromEntries(formData);
 
-        await propertyService.edit(propertyId, propertyData);
+        await edit(propertyId, propertyData);
 
         navigate(`/properties/${propertyId}/details`);
     }
-
     return (
         <section id="edit-page" className="auth">
             <form id="edit" action={formAction}>
