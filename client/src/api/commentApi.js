@@ -16,7 +16,7 @@ function commentsReducer(state, action) {
 
 export const useComments = (propertyId) => {
     const { request } = useAuth();
-    // const [comments, setComments] = useState([]);
+    
     const [comments, dispatch] = useReducer(commentsReducer, [])
 
     useEffect(() => {
