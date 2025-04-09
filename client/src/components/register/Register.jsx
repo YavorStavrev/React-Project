@@ -1,6 +1,7 @@
 import { useRegister } from "../../api/authApi";
 import { useUserContext } from "../../contexts/UserContext";
 import { Link, useNavigate } from "react-router";
+import { toast } from "react-toastify";
 
 export default function Register() {
     const navigate = useNavigate();
@@ -13,16 +14,21 @@ export default function Register() {
         const confirmPassword = formData.get('confirm-password');
 
         if (password !== confirmPassword) {
-            console.log('Password missmatch');
+            toast.error('Password missmatch');
 
             return;
         }
 
-        const authData = await register(email, password);
+        try {
+            const authData = await register(email, password);
 
-        userLoginHandler(authData);
+            userLoginHandler(authData);
+            toast.success('Successful Register');
 
-        navigate('/');
+            navigate(-1);
+        } catch (err) {
+            toast.error(err.message)
+        }
     }
 
 
@@ -30,7 +36,7 @@ export default function Register() {
         <section id="register-page" className="content auth">
             <form id="register" action={registerHandler}>
                 <div className="container">
-                   
+
                     <h1>Register</h1>
 
                     <label htmlFor="email">Email:</label>

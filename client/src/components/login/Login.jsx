@@ -14,7 +14,6 @@ export default function Login() {
 
         try {
             const authData = await login(values.email, values.password);
-
             userLoginHandler(authData);
 
             toast.success('Successful Login')

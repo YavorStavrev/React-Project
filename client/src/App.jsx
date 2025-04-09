@@ -16,6 +16,7 @@ import AuthGuard from './components/guards/AuthGuard'
 import './App.css'
 import GuestGuard from './components/guards/GuestGuard'
 import Logout from './components/logout/Logout'
+import { ToastContainer } from 'react-toastify'
 
 
 function App() {
@@ -43,6 +44,10 @@ function App() {
 
 
       <Footer />
+
+      <ToastContainer />
+
+
     </UserProvider>
   )
 }
