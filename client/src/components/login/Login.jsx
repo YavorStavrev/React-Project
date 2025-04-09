@@ -61,9 +61,9 @@ export default function Login() {
     const [formErrors, setFormErrors] = useState({ email: '', password: '' });
 
     const validateEmail = (email) => {
-        if (email.length < 6) return "Email must be at least 6 characters.";
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailRegex.test(email)) return "Invalid email format.";
+        if (!emailRegex.test(email)) return "Enter a valid email address.";
+        if (email.length < 10) return "Email must be at least 10 characters.";
         return '';
     };
 
@@ -73,7 +73,7 @@ export default function Login() {
     };
 
     const loginHandler = async (_, formData) => {
-        const values = Object.fromEntries(formData);
+        const values = Object.fromEntries(formData.entries());
         const emailError = validateEmail(values.email);
         const passwordError = validatePassword(values.password);
 
@@ -124,7 +124,7 @@ export default function Login() {
                         placeholder="Enter email..."
                         className={formErrors.email ? 'input-error' : ''}
                     />
-                    {formErrors.email && <p className="error-message">{formErrors.email}</p>}
+                    {formErrors.email && <p className="error-text">{formErrors.email}</p>}
 
                     <label htmlFor="login-password">Password:</label>
                     <input
@@ -135,31 +135,32 @@ export default function Login() {
                         onChange={handleInputChange}
                         className={formErrors.password ? 'input-error' : ''}
                     />
-                    {formErrors.password && <p className="error-message">{formErrors.password}</p>}
+                    {formErrors.password && <p className="error-text">{formErrors.password}</p>}
 
                     <input
                         type="submit"
                         className="btn submit"
-                        value="Login"
+                        value={isPending ? "Logging in..." : "Login"}
                         disabled={isPending}
                     />
 
                     <p className="field">
-                        <span>If you don't have profile click <Link to="/register">here!</Link></span>
+                        <span>If you don't have a profile click <Link to="/register">here!</Link></span>
                     </p>
                 </div>
             </form>
 
-            <style jsx>{`
+            <style>{`
                 .input-error {
                     border: 2px solid red;
-                    outline: none;
                     background-color: #ffe6e6;
+                    outline: none;
                 }
 
-                .error-message {
+                .error-text {
                     color: red;
                     font-size: 0.875rem;
+                    margin-top: -8px;
                     margin-bottom: 10px;
                 }
 
